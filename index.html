@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Zira Olov</title>
+  <meta name="description" content="Zira Olov — milliy va zamonaviy taomlar menyusi, narxlar va stol band qilish." />
+  <meta name="theme-color" content="#0a0a14" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Zira Olov" />
+  <meta property="og:locale" content="uz_UZ" />
+  <meta property="og:title" content="Zira Olov — Restoran menyusi" />
+  <meta property="og:description" content="Mazali taomlar, qulay narxlar va stol band qilish." />
+  <meta property="og:url" content="https://milliyweb.github.io/Restaraunt/" />
+  <meta property="og:image" content="https://milliyweb.github.io/Restaraunt/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Zira Olov — Restoran menyusi" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Zira Olov — Restoran menyusi" />
+  <meta name="twitter:description" content="Mazali taomlar, qulay narxlar va stol band qilish." />
+  <meta name="twitter:image" content="https://milliyweb.github.io/Restaraunt/og-image.png" />
+  <link rel="icon" type="image/png" href="icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="imgs/icon.png">
+</head>
+<body>
+  <div id="loader" class="loader">
+    <div class="curtain left"></div>
+    <div class="curtain right"></div>
+    <div class="loader-box">
+      <div class="loader-ring-wrap">
+        <div class="loader-ring"></div>
+        <i class="fa-solid fa-utensils loader-icon"></i>
+      </div>
+      <div class="loader-brand">Zira Olov</div>
+      <div class="percent"></div>
+      <div class="bar"><span id="barFill"></span></div>
+      <div class="loader-status">
+        <i class="fa-solid fa-spinner fa-spin"></i>
+        <span>Yuklanmoqda...</span>
+      </div>
+    </div>
+    <button type="button" class="skip" onclick="finishLoading()">O'tkazib yuborish <i class="fa-solid fa-forward"></i></button>
+  </div>
+
+  <div class="progress"><span id="progressFill"></span></div>
+
+  <div class="ambient-bg" aria-hidden="true">
+    <span class="glow glow-pink"></span>
+    <span class="glow glow-violet"></span>
+    <span class="glow glow-cyan"></span>
+    <div class="dot-grid"></div>
+  </div>
+
+  <header id="header" class="site-header">
+    <a href="#" class="brand">
+      <i class="fa-solid fa-utensils"></i>
+      <span>Zira Olov</span>
+    </a>
+    <nav id="nav" class="main-nav">
+      <a href="#menu" onclick="toggleMenu('nav')">Menyu</a>
+      <a href="#prices" onclick="toggleMenu('nav')">Narxlar</a>
+      <a href="#offers" onclick="toggleMenu('nav')">Takliflar</a>
+      <a href="#booking" onclick="toggleMenu('nav')">Stol band qilish</a>
+      <a href="#contact" onclick="toggleMenu('nav')">Aloqa</a>
+    </nav>
+    <div class="header-actions">
+      <button type="button" class="cart-btn" onclick="toggleMenu('cart')" aria-label="Buyurtma">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span id="cartCount" class="cart-badge">0</span>
+      </button>
+      <button type="button" class="burger-btn" onclick="toggleMenu('nav')" aria-label="Menyu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <span class="pill-tag"><i class="fa-solid fa-fire"></i> Yangi ta'm</span>
+          <h1 class="hero-title">
+            <span>Issiq</span>
+            <span class="grad-word">Olov</span>
+            <span class="outline-word">Ta'mi</span>
+          </h1>
+          <p class="hero-desc">Zira Olov oshxonasida sara ziravorlar, ochiq olov tafti va milliy dasturxon mehmondo'stligi uyg'unlashadi.</p>
+          <div class="hero-btns">
+            <a href="#menu" class="btn btn-primary">Menyuni ko'rish</a>
+            <a href="#booking" class="btn btn-ghost">Stol band qilish</a>
+          </div>
+          <div class="hero-metrics">
+            <div class="metric-item">
+              <i class="fa-solid fa-utensils"></i>
+              <span>9 xil taom</span>
+            </div>
+            <div class="metric-item">
+              <i class="fa-solid fa-motorcycle"></i>
+              <span>Tez yetkazish</span>
+            </div>
+            <div class="metric-item">
+              <i class="fa-solid fa-clock"></i>
+              <span>10:00 - 23:00</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="plate-orbit"></div>
+          <div class="hero-steam" aria-hidden="true">
+            <span class="steam-puff p1"></span>
+            <span class="steam-puff p2"></span>
+            <span class="steam-puff p3"></span>
+            <span class="steam-puff p4"></span>
+          </div>
+          <div class="hero-plate plate">
+            <img src="imgs/taom-hero.jpg" alt="rasm" onerror="this.remove()" />
+          </div>
+          <span class="sticker sticker-pepper" aria-hidden="true"><i class="fa-solid fa-pepper-hot"></i></span>
+          <span class="sticker sticker-leaf" aria-hidden="true"><i class="fa-solid fa-leaf"></i></span>
+          <span class="sticker sticker-fire" aria-hidden="true"><i class="fa-solid fa-fire"></i></span>
+        </div>
+      </div>
+    </section>
+
+    <div class="menu-ribbon" aria-hidden="true">
+      <span class="ribbon-badge">MENYU</span>
+      <div class="ribbon-viewport">
+        <div class="ribbon-track">
+          <div class="ribbon-group">
+            <span class="ribbon-item"><span class="r-name">Mastava</span><span class="r-price">28 000 so'm</span><span class="r-dot"></span></span>
+            <span class="ribbon-item"><span class="r-name">Chuchvara sho'rva</span><span class="r-price">32 000 so'm</span><span class="r-dot"></span></span>
+            <span class="ribbon-item"><span class="r-name">Bayram oshi</span><span class="r-price">48 000 so'm</span><span class="r-dot"></span></span>
+            <span class="ribbon-item"><span class="r-name">Qovurma lag'mon</span><span class="r-price">44 000 so'm</span><span class="r-dot"></span></span>
+            <span class="ribbon-item"><span class="r-name">Achichiq-chuchuk salat</span><span class="r-price">18 000 so'm</span><span class="r-dot"></span></span>
+            <span class="ribbon-item"><span class="r-name">Bahoriy ko'kat salati</span><span class="r-price">22 000 so'm</span><span class="r-dot"></span></span>
+            <span class="ribbon-item"><span class="r-name">Zanjabilli ko'k choy</span><span class="r-price">15 000 so'm</span><span class="r-dot"></span></span>
+            <span class="ribbon-item"><span class="r-name">Olcha kompot</span><span class="r-price">14 000 so'm</span><span class="r-dot"></span></span>
+            <span class="ribbon-item"><span class="r-name">Yong'oqli chak-chak</span><span class="r-price">26 000 so'm</span><span class="r-dot"></span></span>
+          </div>
+          <div class="ribbon-group">
+            <span class="ribbon-item"><span class="r-name">Mastava</span><span class="r-price">28 000 so'm</span><span class="r-dot"></span></span>
+            <span class="ribbon-item"><span class="r-name">Chuchvara sho'rva</span><span class="r-price">32 000 so'm</span><span class="r-dot"></span></span>
+            <span class="ribbon-item"><span class="r-name">Bayram oshi</span><span class="r-price">48 000 so'm</span><span class="r-dot"></span></span>
+            <span class="ribbon-item"><span class="r-name">Qovurma lag'mon</span><span class="r-price">44 000 so'm</span><span class="r-dot"></span></span>
+            <span class="ribbon-item"><span class="r-name">Achichiq-chuchuk salat</span><span class="r-price">18 000 so'm</span><span class="r-dot"></span></span>
+            <span class="ribbon-item"><span class="r-name">Bahoriy ko'kat salati</span><span class="r-price">22 000 so'm</span><span class="r-dot"></span></span>
+            <span class="ribbon-item"><span class="r-name">Zanjabilli ko'k choy</span><span class="r-price">15 000 so'm</span><span class="r-dot"></span></span>
+            <span class="ribbon-item"><span class="r-name">Olcha kompot</span><span class="r-price">14 000 so'm</span><span class="r-dot"></span></span>
+            <span class="ribbon-item"><span class="r-name">Yong'oqli chak-chak</span><span class="r-price">26 000 so'm</span><span class="r-dot"></span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-ribbon ribbon-slow-a" aria-hidden="true">
+      <span class="ribbon-badge">NARXLAR</span>
+      <div class="ribbon-viewport">
+        <div class="ribbon-track">
+          <div class="ribbon-group">
+            <span class="ribbon-item"><span class="r-name">Qozon kabob</span><span class="r-price">65 000 so'm</span><span class="r-dot"></span></span>
+            <span class="ribbon-item"><span class="r-name">Sho'rva qovurma</span><span class="r-price">35 000 so'm</span><span class="r-dot"></span></span>
+            <span class="ribbon-item"><span class="r-name">Cho'pon shashlik</span><span class="r-price">38 000 so'm</span><span class="r-dot"></span></span>
+            <span class="ribbon-item"><span class="r-name">Qovurilgan manti</span><span class="r-price">36 000 so'm</span><span class="r-dot"></span></span>
+            <span class="ribbon-item"><span class="r-name">Tandir somsa</span><span class="r-price">16 000 so'm</span><span class="r-dot"></span></span>
+            <span class="ribbon-item"><span class="r-name">Moshxo'rda</span><span class="r-price">26 000 so'm</span><span class="r-dot"></span></span>
+            <span class="ribbon-item"><span class="r-name">Rayhonli limonad</span><span class="r-price">18 000 so'm</span><span class="r-dot"></span></span>
+            <span class="ribbon-item"><span class="r-name">Asalli pahlava</span><span class="r-price">30 000 so'm</span><span class="r-dot"></span></span>
+            <span class="ribbon-item"><span class="r-name">Tuzli ayron</span><span class="r-price">11 000 so'm</span><span class="r-dot"></span></span>
+          </div>
+          <div class="ribbon-group">
+            <span class="ribbon-item"><span class="r-name">Qozon kabob</span><span class="r-price">65 000 so'm</span><span class="r-dot"></span></span>
+            <span class="ribbon-item"><span class="r-name">Sho'rva qovurma</span><span class="r-price">35 000 so'm</span><span class="r-dot"></span></span>
+            <span class="ribbon-item"><span class="r-name">Cho'pon shashlik</span><span class="r-price">38 000 so'm</span><span class="r-dot"></span></span>
+            <span class="ribbon-item"><span class="r-name">Qovurilgan manti</span><span class="r-price">36 000 so'm</span><span class="r-dot"></span></span>
+            <span class="ribbon-item"><span class="r-name">Tandir somsa</span><span class="r-price">16 000 so'm</span><span class="r-dot"></span></span>
+            <span class="ribbon-item"><span class="r-name">Moshxo'rda</span><span class="r-price">26 000 so'm</span><span class="r-dot"></span></span>
+            <span class="ribbon-item"><span class="r-name">Rayhonli limonad</span><span class="r-price">18 000 so'm</span><span class="r-dot"></span></span>
+            <span class="ribbon-item"><span class="r-name">Asalli pahlava</span><span class="r-price">30 000 so'm</span><span class="r-dot"></span></span>
+            <span class="ribbon-item"><span class="r-name">Tuzli ayron</span><span class="r-price">11 000 so'm</span><span class="r-dot"></span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-ribbon ribbon-slow-b" aria-hidden="true">
+      <span class="ribbon-badge">TAKLIF</span>
+      <div class="ribbon-viewport">
+        <div class="ribbon-track">
+          <div class="ribbon-group">
+            <span class="ribbon-item"><span class="r-name">Biznes-lanch</span><span class="r-price">35 000 so'm</span><span class="r-dot"></span></span>
+            <span class="ribbon-item"><span class="r-name">Achchiq sho'rva</span><span class="r-price">30 000 so'm</span><span class="r-dot"></span></span>
+            <span class="ribbon-item"><span class="r-name">Baqlajonli gazak</span><span class="r-price">24 000 so'm</span><span class="r-dot"></span></span>
+            <span class="ribbon-item"><span class="r-name">Suzma va ko'katlar</span><span class="r-price">15 000 so'm</span><span class="r-dot"></span></span>
+            <span class="ribbon-item"><span class="r-name">Tuzlangan sabzavotlar</span><span class="r-price">20 000 so'm</span><span class="r-dot"></span></span>
+            <span class="ribbon-item"><span class="r-name">Qora choy choynakda</span><span class="r-price">12 000 so'm</span><span class="r-dot"></span></span>
+            <span class="ribbon-item"><span class="r-name">Qaymoqli patir shirinlik</span><span class="r-price">24 000 so'm</span><span class="r-dot"></span></span>
+            <span class="ribbon-item"><span class="r-name">Bayram oshi</span><span class="r-price">48 000 so'm</span><span class="r-dot"></span></span>
+            <span class="ribbon-item"><span class="r-name">Zanjabilli ko'k choy</span><span class="r-price">15 000 so'm</span><span class="r-dot"></span></span>
+          </div>
+          <div class="ribbon-group">
+            <span class="ribbon-item"><span class="r-name">Biznes-lanch</span><span class="r-price">35 000 so'm</span><span class="r-dot"></span></span>
+            <span class="ribbon-item"><span class="r-name">Achchiq sho'rva</span><span class="r-price">30 000 so'm</span><span class="r-dot"></span></span>
+            <span class="ribbon-item"><span class="r-name">Baqlajonli gazak</span><span class="r-price">24 000 so'm</span><span class="r-dot"></span></span>
+            <span class="ribbon-item"><span class="r-name">Suzma va ko'katlar</span><span class="r-price">15 000 so'm</span><span class="r-dot"></span></span>
+            <span class="ribbon-item"><span class="r-name">Tuzlangan sabzavotlar</span><span class="r-price">20 000 so'm</span><span class="r-dot"></span></span>
+            <span class="ribbon-item"><span class="r-name">Qora choy choynakda</span><span class="r-price">12 000 so'm</span><span class="r-dot"></span></span>
+            <span class="ribbon-item"><span class="r-name">Qaymoqli patir shirinlik</span><span class="r-price">24 000 so'm</span><span class="r-dot"></span></span>
+            <span class="ribbon-item"><span class="r-name">Bayram oshi</span><span class="r-price">48 000 so'm</span><span class="r-dot"></span></span>
+            <span class="ribbon-item"><span class="r-name">Zanjabilli ko'k choy</span><span class="r-price">15 000 so'm</span><span class="r-dot"></span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section id="menu" class="section menu-section reveal-item">
+      <div class="container">
+        <div class="section-head">
+          <span class="pill-tag">01 / Menyu</span>
+          <h2 class="section-title">
+            <span>Saralangan</span>
+            <span class="grad-word">Milliy</span>
+            <span class="outline-word">Taomlar</span>
+          </h2>
+          <p class="section-desc">Har bir taom yangi masalliqlardan buyurtma berilgan zahoti issiq holda tayyorlanadi.</p>
+        </div>
+
+        <div class="filter-bar">
+          <button type="button" class="filter-btn" onclick="filterMenu('all')">Hammasi</button>
+          <button type="button" class="filter-btn" onclick="filterMenu('first')"><i class="fa-solid fa-bowl-food"></i> Birinchi taomlar</button>
+          <button type="button" class="filter-btn" onclick="filterMenu('main')"><i class="fa-solid fa-drumstick-bite"></i> Ikkinchi taomlar</button>
+          <button type="button" class="filter-btn" onclick="filterMenu('salad')"><i class="fa-solid fa-leaf"></i> Salatlar</button>
+          <button type="button" class="filter-btn" onclick="filterMenu('drink')"><i class="fa-solid fa-mug-hot"></i> Ichimliklar</button>
+          <button type="button" class="filter-btn" onclick="filterMenu('dessert')"><i class="fa-solid fa-ice-cream"></i> Shirinliklar</button>
+        </div>
+
+        <div class="dish-grid">
+          <article class="dish-card" data-type="first">
+            <div class="dish-plate plate">
+              <img src="imgs/taom01.jpg" alt="rasm" loading="lazy" onerror="this.remove()" />
+            </div>
+            <h3 class="dish-name">Mastava</h3>
+            <p class="dish-desc">Guruch, mol go'shti va xushbo'y ko'katlar bilan qaynatilgan quyuq sho'rva</p>
+            <div class="price-row">
+              <span>Narxi</span>
+              <span class="dots"></span>
+              <strong class="price-val">28 000 so'm</strong>
+            </div>
+            <div class="dish-actions">
+              <a href="#oyna-1" class="btn btn-ghost">Batafsil</a>
+              <button type="button" class="btn btn-primary" data-name="Mastava" data-price="28000" onclick="addDish(this)">Buyurtmaga qo'shish</button>
+            </div>
+          </article>
+
+          <article class="dish-card" data-type="first">
+            <div class="dish-plate plate">
+              <img src="imgs/taom02.jpg" alt="rasm" loading="lazy" onerror="this.remove()" />
+            </div>
+            <h3 class="dish-name">Chuchvara sho'rva</h3>
+            <p class="dish-desc">Qo'lda tugilgan mayda chuchvaralar va ziravorli bulyon</p>
+            <div class="price-row">
+              <span>Narxi</span>
+              <span class="dots"></span>
+              <strong class="price-val">32 000 so'm</strong>
+            </div>
+            <div class="dish-actions">
+              <a href="#oyna-2" class="btn btn-ghost">Batafsil</a>
+              <button type="button" class="btn btn-primary" data-name="Chuchvara sho'rva" data-price="32000" onclick="addDish(this)">Buyurtmaga qo'shish</button>
+            </div>
+          </article>
+
+          <article class="dish-card" data-type="main">
+            <div class="dish-plate plate">
+              <img src="imgs/taom03.jpg" alt="rasm" loading="lazy" onerror="this.remove()" />
+            </div>
+            <h3 class="dish-name">Bayram oshi</h3>
+            <p class="dish-desc">Devzira guruch, sariq sabzi va yumshoq qo'y go'shtidan damlangan osh</p>
+            <div class="price-row">
+              <span>Narxi</span>
+              <span class="dots"></span>
+              <strong class="price-val">48 000 so'm</strong>
+            </div>
+            <div class="dish-actions">
+              <a href="#oyna-3" class="btn btn-ghost">Batafsil</a>
+              <button type="button" class="btn btn-primary" data-name="Bayram oshi" data-price="48000" onclick="addDish(this)">Buyurtmaga qo'shish</button>
+            </div>
+          </article>
+
+          <article class="dish-card" data-type="main">
+            <div class="dish-plate plate">
+              <img src="imgs/taom04.jpg" alt="rasm" loading="lazy" onerror="this.remove()" />
+            </div>
+            <h3 class="dish-name">Qovurma lag'mon</h3>
+            <p class="dish-desc">Qo'lda cho'zilgan xamir, mol go'shti va sabzavotli qaylasi bilan</p>
+            <div class="price-row">
+              <span>Narxi</span>
+              <span class="dots"></span>
+              <strong class="price-val">44 000 so'm</strong>
+            </div>
+            <div class="dish-actions">
+              <a href="#oyna-4" class="btn btn-ghost">Batafsil</a>
+              <button type="button" class="btn btn-primary" data-name="Qovurma lag'mon" data-price="44000" onclick="addDish(this)">Buyurtmaga qo'shish</button>
+            </div>
+          </article>
+
+          <article class="dish-card" data-type="salad">
+            <div class="dish-plate plate">
+              <img src="imgs/taom05.jpg" alt="rasm" loading="lazy" onerror="this.remove()" />
+            </div>
+            <h3 class="dish-name">Achichiq-chuchuk salat</h3>
+            <p class="dish-desc">Pishgan pomidor, yupqa piyoz va achchiq qalampir uyg'unligi</p>
+            <div class="price-row">
+              <span>Narxi</span>
+              <span class="dots"></span>
+              <strong class="price-val">18 000 so'm</strong>
+            </div>
+            <div class="dish-actions">
+              <a href="#oyna-5" class="btn btn-ghost">Batafsil</a>
+              <button type="button" class="btn btn-primary" data-name="Achichiq-chuchuk salat" data-price="18000" onclick="addDish(this)">Buyurtmaga qo'shish</button>
+            </div>
+          </article>
+
+          <article class="dish-card" data-type="salad">
+            <div class="dish-plate plate">
+              <img src="imgs/taom06.jpg" alt="rasm" loading="lazy" onerror="this.remove()" />
+            </div>
+            <h3 class="dish-name">Bahoriy ko'kat salati</h3>
+            <p class="dish-desc">Yangi bodring, rediska, rayhon va zaytun yog'i bilan</p>
+            <div class="price-row">
+              <span>Narxi</span>
+              <span class="dots"></span>
+              <strong class="price-val">22 000 so'm</strong>
+            </div>
+            <div class="dish-actions">
+              <a href="#oyna-6" class="btn btn-ghost">Batafsil</a>
+              <button type="button" class="btn btn-primary" data-name="Bahoriy ko'kat salati" data-price="22000" onclick="addDish(this)">Buyurtmaga qo'shish</button>
+            </div>
+          </article>
+
+          <article class="dish-card" data-type="drink">
+            <div class="dish-plate plate">
+              <img src="imgs/taom07.jpg" alt="rasm" loading="lazy" onerror="this.remove()" />
+            </div>
+            <h3 class="dish-name">Zanjabilli ko'k choy</h3>
+            <p class="dish-desc">Yangi zanjabil, yalpiz bargi va tog' asali qo'shilgan choynak choy</p>
+            <div class="price-row">
+              <span>Narxi</span>
+              <span class="dots"></span>
+              <strong class="price-val">15 000 so'm</strong>
+            </div>
+            <div class="dish-actions">
+              <a href="#oyna-7" class="btn btn-ghost">Batafsil</a>
+              <button type="button" class="btn btn-primary" data-name="Zanjabilli ko'k choy" data-price="15000" onclick="addDish(this)">Buyurtmaga qo'shish</button>
+            </div>
+          </article>
+
+          <article class="dish-card" data-type="drink">
+            <div class="dish-plate plate">
+              <img src="imgs/taom08.jpg" alt="rasm" loading="lazy" onerror="this.remove()" />
+            </div>
+            <h3 class="dish-name">Olcha kompot</h3>
+            <p class="dish-desc">Tabiiy olcha mevalaridan tayyorlangan salqin ichimlik</p>
+            <div class="price-row">
+              <span>Narxi</span>
+              <span class="dots"></span>
+              <strong class="price-val">14 000 so'm</strong>
+            </div>
+            <div class="dish-actions">
+              <a href="#oyna-8" class="btn btn-ghost">Batafsil</a>
+              <button type="button" class="btn btn-primary" data-name="Olcha kompot" data-price="14000" onclick="addDish(this)">Buyurtmaga qo'shish</button>
+            </div>
+          </article>
+
+          <article class="dish-card" data-type="dessert">
+            <div class="dish-plate plate">
+              <img src="imgs/taom09.jpg" alt="rasm" loading="lazy" onerror="this.remove()" />
+            </div>
+            <h3 class="dish-name">Yong'oqli chak-chak</h3>
+            <p class="dish-desc">Asal qiyomi va qovurilgan yong'oq bo'laklari bilan bezatilgan</p>
+            <div class="price-row">
+              <span>Narxi</span>
+              <span class="dots"></span>
+              <strong class="price-val">26 000 so'm</strong>
+            </div>
+            <div class="dish-actions">
+              <a href="#oyna-9" class="btn btn-ghost">Batafsil</a>
+              <button type="button" class="btn btn-primary" data-name="Yong'oqli chak-chak" data-price="26000" onclick="addDish(this)">Buyurtmaga qo'shish</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div id="oyna-1" class="modal">
+      <div class="modal-card">
+        <a href="#menu" class="modal-close" aria-label="Yopish"><i class="fa-solid fa-xmark"></i></a>
+        <div class="modal-plate plate"><img src="imgs/taom01.jpg" alt="rasm" loading="lazy" onerror="this.remove()" /></div>
+        <h3>Mastava</h3>
+        <p class="modal-price">28 000 so'm</p>
+        <ul class="ing-list">
+          <li><i class="fa-solid fa-drumstick-bite"></i> Mol go'shti</li>
+          <li><i class="fa-solid fa-bowl-food"></i> Dumaloq guruch</li>
+          <li><i class="fa-solid fa-leaf"></i> Sabzi, kartoshka, ko'kat</li>
+        </ul>
+        <div class="modal-meta">
+          <span><i class="fa-solid fa-weight-hanging"></i> 380 g</span>
+          <span><i class="fa-solid fa-clock"></i> 15 daqiqa</span>
+          <span><i class="fa-solid fa-fire"></i> 340 kkal</span>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-primary" data-name="Mastava" data-price="28000" onclick="addDish(this)">Buyurtmaga qo'shish</button>
+          <a href="#menu" class="btn btn-ghost">Yopish</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="oyna-2" class="modal">
+      <div class="modal-card">
+        <a href="#menu" class="modal-close" aria-label="Yopish"><i class="fa-solid fa-xmark"></i></a>
+        <div class="modal-plate plate"><img src="imgs/taom02.jpg" alt="rasm" loading="lazy" onerror="this.remove()" /></div>
+        <h3>Chuchvara sho'rva</h3>
+        <p class="modal-price">32 000 so'm</p>
+        <ul class="ing-list">
+          <li><i class="fa-solid fa-drumstick-bite"></i> Qo'y va mol go'shti qiymasi</li>
+          <li><i class="fa-solid fa-bowl-food"></i> Yupqa xamir chuchvara</li>
+          <li><i class="fa-solid fa-leaf"></i> Kashnich va smetana</li>
+        </ul>
+        <div class="modal-meta">
+          <span><i class="fa-solid fa-weight-hanging"></i> 360 g</span>
+          <span><i class="fa-solid fa-clock"></i> 18 daqiqa</span>
+          <span><i class="fa-solid fa-fire"></i> 390 kkal</span>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-primary" data-name="Chuchvara sho'rva" data-price="32000" onclick="addDish(this)">Buyurtmaga qo'shish</button>
+          <a href="#menu" class="btn btn-ghost">Yopish</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="oyna-3" class="modal">
+      <div class="modal-card">
+        <a href="#menu" class="modal-close" aria-label="Yopish"><i class="fa-solid fa-xmark"></i></a>
+        <div class="modal-plate plate"><img src="imgs/taom03.jpg" alt="rasm" loading="lazy" onerror="this.remove()" /></div>
+        <h3>Bayram oshi</h3>
+        <p class="modal-price">48 000 so'm</p>
+        <ul class="ing-list">
+          <li><i class="fa-solid fa-bowl-food"></i> Devzira guruchi</li>
+          <li><i class="fa-solid fa-drumstick-bite"></i> Qo'y go'shti va dumba</li>
+          <li><i class="fa-solid fa-pepper-hot"></i> Zira, zirk va sabzi</li>
+        </ul>
+        <div class="modal-meta">
+          <span><i class="fa-solid fa-weight-hanging"></i> 450 g</span>
+          <span><i class="fa-solid fa-clock"></i> 20 daqiqa</span>
+          <span><i class="fa-solid fa-fire"></i> 680 kkal</span>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-primary" data-name="Bayram oshi" data-price="48000" onclick="addDish(this)">Buyurtmaga qo'shish</button>
+          <a href="#menu" class="btn btn-ghost">Yopish</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="oyna-4" class="modal">
+      <div class="modal-card">
+        <a href="#menu" class="modal-close" aria-label="Yopish"><i class="fa-solid fa-xmark"></i></a>
+        <div class="modal-plate plate"><img src="imgs/taom04.jpg" alt="rasm" loading="lazy" onerror="this.remove()" /></div>
+        <h3>Qovurma lag'mon</h3>
+        <p class="modal-price">44 000 so'm</p>
+        <ul class="ing-list">
+          <li><i class="fa-solid fa-drumstick-bite"></i> Mol go'shti bo'laklari</li>
+          <li><i class="fa-solid fa-bowl-food"></i> Qo'lda cho'zilgan lag'mon</li>
+          <li><i class="fa-solid fa-pepper-hot"></i> Bulg'or qalampiri va sarimsoq</li>
+        </ul>
+        <div class="modal-meta">
+          <span><i class="fa-solid fa-weight-hanging"></i> 420 g</span>
+          <span><i class="fa-solid fa-clock"></i> 18 daqiqa</span>
+          <span><i class="fa-solid fa-fire"></i> 590 kkal</span>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-primary" data-name="Qovurma lag'mon" data-price="44000" onclick="addDish(this)">Buyurtmaga qo'shish</button>
+          <a href="#menu" class="btn btn-ghost">Yopish</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="oyna-5" class="modal">
+      <div class="modal-card">
+        <a href="#menu" class="modal-close" aria-label="Yopish"><i class="fa-solid fa-xmark"></i></a>
+        <div class="modal-plate plate"><img src="imgs/taom05.jpg" alt="rasm" loading="lazy" onerror="this.remove()" /></div>
+        <h3>Achichiq-chuchuk salat</h3>
+        <p class="modal-price">18 000 so'm</p>
+        <ul class="ing-list">
+          <li><i class="fa-solid fa-leaf"></i> Yangi pomidor</li>
+          <li><i class="fa-solid fa-leaf"></i> Qizil piyoz va rayhon</li>
+          <li><i class="fa-solid fa-pepper-hot"></i> Achchiq qalampir va limon</li>
+        </ul>
+        <div class="modal-meta">
+          <span><i class="fa-solid fa-weight-hanging"></i> 220 g</span>
+          <span><i class="fa-solid fa-clock"></i> 8 daqiqa</span>
+          <span><i class="fa-solid fa-fire"></i> 110 kkal</span>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-primary" data-name="Achichiq-chuchuk salat" data-price="18000" onclick="addDish(this)">Buyurtmaga qo'shish</button>
+          <a href="#menu" class="btn btn-ghost">Yopish</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="oyna-6" class="modal">
+      <div class="modal-card">
+        <a href="#menu" class="modal-close" aria-label="Yopish"><i class="fa-solid fa-xmark"></i></a>
+        <div class="modal-plate plate"><img src="imgs/taom06.jpg" alt="rasm" loading="lazy" onerror="this.remove()" /></div>
+        <h3>Bahoriy ko'kat salati</h3>
+        <p class="modal-price">22 000 so'm</p>
+        <ul class="ing-list">
+          <li><i class="fa-solid fa-leaf"></i> Bodring va rediska</li>
+          <li><i class="fa-solid fa-leaf"></i> Ukrop, petrushka va ko'k piyoz</li>
+          <li><i class="fa-solid fa-fire"></i> Zaytun yog'i</li>
+        </ul>
+        <div class="modal-meta">
+          <span><i class="fa-solid fa-weight-hanging"></i> 240 g</span>
+          <span><i class="fa-solid fa-clock"></i> 10 daqiqa</span>
+          <span><i class="fa-solid fa-fire"></i> 145 kkal</span>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-primary" data-name="Bahoriy ko'kat salati" data-price="22000" onclick="addDish(this)">Buyurtmaga qo'shish</button>
+          <a href="#menu" class="btn btn-ghost">Yopish</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="oyna-7" class="modal">
+      <div class="modal-card">
+        <a href="#menu" class="modal-close" aria-label="Yopish"><i class="fa-solid fa-xmark"></i></a>
+        <div class="modal-plate plate"><img src="imgs/taom07.jpg" alt="rasm" loading="lazy" onerror="this.remove()" /></div>
+        <h3>Zanjabilli ko'k choy</h3>
+        <p class="modal-price">15 000 so'm</p>
+        <ul class="ing-list">
+          <li><i class="fa-solid fa-mug-hot"></i> Saralangan ko'k choy bargi</li>
+          <li><i class="fa-solid fa-pepper-hot"></i> Yangi zanjabil ildizi</li>
+          <li><i class="fa-solid fa-leaf"></i> Yalpiz va tog' asali</li>
+        </ul>
+        <div class="modal-meta">
+          <span><i class="fa-solid fa-weight-hanging"></i> 500 ml</span>
+          <span><i class="fa-solid fa-clock"></i> 7 daqiqa</span>
+          <span><i class="fa-solid fa-fire"></i> 65 kkal</span>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-primary" data-name="Zanjabilli ko'k choy" data-price="15000" onclick="addDish(this)">Buyurtmaga qo'shish</button>
+          <a href="#menu" class="btn btn-ghost">Yopish</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="oyna-8" class="modal">
+      <div class="modal-card">
+        <a href="#menu" class="modal-close" aria-label="Yopish"><i class="fa-solid fa-xmark"></i></a>
+        <div class="modal-plate plate"><img src="imgs/taom08.jpg" alt="rasm" loading="lazy" onerror="this.remove()" /></div>
+        <h3>Olcha kompot</h3>
+        <p class="modal-price">14 000 so'm</p>
+        <ul class="ing-list">
+          <li><i class="fa-solid fa-mug-hot"></i> Tabiiy olcha mevalari</li>
+          <li><i class="fa-solid fa-leaf"></i> Toza buloq suvi</li>
+          <li><i class="fa-solid fa-fire"></i> Yengil shakar eritmasi</li>
+        </ul>
+        <div class="modal-meta">
+          <span><i class="fa-solid fa-weight-hanging"></i> 400 ml</span>
+          <span><i class="fa-solid fa-clock"></i> 5 daqiqa</span>
+          <span><i class="fa-solid fa-fire"></i> 120 kkal</span>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-primary" data-name="Olcha kompot" data-price="14000" onclick="addDish(this)">Buyurtmaga qo'shish</button>
+          <a href="#menu" class="btn btn-ghost">Yopish</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="oyna-9" class="modal">
+      <div class="modal-card">
+        <a href="#menu" class="modal-close" aria-label="Yopish"><i class="fa-solid fa-xmark"></i></a>
+        <div class="modal-plate plate"><img src="imgs/taom09.jpg" alt="rasm" loading="lazy" onerror="this.remove()" /></div>
+        <h3>Yong'oqli chak-chak</h3>
+        <p class="modal-price">26 000 so'm</p>
+        <ul class="ing-list">
+          <li><i class="fa-solid fa-ice-cream"></i> Qovurilgan xamir donachalari</li>
+          <li><i class="fa-solid fa-fire"></i> Tabiiy asal qiyomi</li>
+          <li><i class="fa-solid fa-leaf"></i> Maydalangan grek yong'og'i</li>
+        </ul>
+        <div class="modal-meta">
+          <span><i class="fa-solid fa-weight-hanging"></i> 210 g</span>
+          <span><i class="fa-solid fa-clock"></i> 10 daqiqa</span>
+          <span><i class="fa-solid fa-fire"></i> 510 kkal</span>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-primary" data-name="Yong'oqli chak-chak" data-price="26000" onclick="addDish(this)">Buyurtmaga qo'shish</button>
+          <a href="#menu" class="btn btn-ghost">Yopish</a>
+        </div>
+      </div>
+    </div>
+
+    <section id="prices" class="section prices-section reveal-item">
+      <div class="container">
+        <div class="section-head">
+          <span class="pill-tag">02 / Narxlar</span>
+          <h2 class="section-title">
+            <span>To'liq</span>
+            <span class="grad-word">Narxlar</span>
+            <span class="outline-word">Ro'yxati</span>
+          </h2>
+          <p class="section-desc">Barcha bo'limlardagi taom va ichimliklarning aniq narxlari bir sahifada.</p>
+        </div>
+
+        <div class="price-sheet-grid">
+          <div class="price-cat-card">
+            <h3 class="cat-heading"><i class="fa-solid fa-bowl-food"></i> Birinchi taomlar</h3>
+            <ul class="ledger-list">
+              <li class="ledger-item"><span>Mastava</span><span class="dots"></span><strong>28 000 so'm</strong></li>
+              <li class="ledger-item"><span>Chuchvara sho'rva</span><span class="dots"></span><strong>32 000 so'm</strong></li>
+              <li class="ledger-item"><span>Sho'rva qovurma</span><span class="dots"></span><strong>35 000 so'm</strong></li>
+              <li class="ledger-item"><span>Achchiq sho'rva <i class="fa-solid fa-pepper-hot tag-hot"></i></span><span class="dots"></span><strong>30 000 so'm</strong></li>
+              <li class="ledger-item"><span>Moshxo'rda <i class="fa-solid fa-leaf tag-veg"></i></span><span class="dots"></span><strong>26 000 so'm</strong></li>
+            </ul>
+          </div>
+
+          <div class="price-cat-card">
+            <h3 class="cat-heading"><i class="fa-solid fa-drumstick-bite"></i> Ikkinchi taomlar</h3>
+            <ul class="ledger-list">
+              <li class="ledger-item"><span>Bayram oshi</span><span class="dots"></span><strong>48 000 so'm</strong></li>
+              <li class="ledger-item"><span>Qovurma lag'mon</span><span class="dots"></span><strong>44 000 so'm</strong></li>
+              <li class="ledger-item"><span>Qozon kabob</span><span class="dots"></span><strong>65 000 so'm</strong></li>
+              <li class="ledger-item"><span>Cho'pon shashlik <i class="fa-solid fa-pepper-hot tag-hot"></i></span><span class="dots"></span><strong>38 000 so'm</strong></li>
+              <li class="ledger-item"><span>Qovurilgan manti</span><span class="dots"></span><strong>36 000 so'm</strong></li>
+              <li class="ledger-item"><span>Tandir somsa</span><span class="dots"></span><strong>16 000 so'm</strong></li>
+            </ul>
+          </div>
+
+          <div class="price-cat-card">
+            <h3 class="cat-heading"><i class="fa-solid fa-leaf"></i> Salatlar va gazaklar</h3>
+            <ul class="ledger-list">
+              <li class="ledger-item"><span>Achichiq-chuchuk salat <i class="fa-solid fa-pepper-hot tag-hot"></i></span><span class="dots"></span><strong>18 000 so'm</strong></li>
+              <li class="ledger-item"><span>Bahoriy ko'kat salati <i class="fa-solid fa-leaf tag-veg"></i></span><span class="dots"></span><strong>22 000 so'm</strong></li>
+              <li class="ledger-item"><span>Suzma va ko'katlar <i class="fa-solid fa-leaf tag-veg"></i></span><span class="dots"></span><strong>15 000 so'm</strong></li>
+              <li class="ledger-item"><span>Baqlajonli gazak <i class="fa-solid fa-leaf tag-veg"></i></span><span class="dots"></span><strong>24 000 so'm</strong></li>
+              <li class="ledger-item"><span>Tuzlangan sabzavotlar <i class="fa-solid fa-leaf tag-veg"></i></span><span class="dots"></span><strong>20 000 so'm</strong></li>
+            </ul>
+          </div>
+
+          <div class="price-cat-card">
+            <h3 class="cat-heading"><i class="fa-solid fa-mug-hot"></i> Ichimliklar</h3>
+            <ul class="ledger-list">
+              <li class="ledger-item"><span>Zanjabilli ko'k choy</span><span class="dots"></span><strong>15 000 so'm</strong></li>
+              <li class="ledger-item"><span>Olcha kompot</span><span class="dots"></span><strong>14 000 so'm</strong></li>
+              <li class="ledger-item"><span>Rayhonli limonad</span><span class="dots"></span><strong>18 000 so'm</strong></li>
+              <li class="ledger-item"><span>Qora choy choynakda</span><span class="dots"></span><strong>12 000 so'm</strong></li>
+              <li class="ledger-item"><span>Tuzli ayron</span><span class="dots"></span><strong>11 000 so'm</strong></li>
+            </ul>
+          </div>
+
+          <div class="price-cat-card">
+            <h3 class="cat-heading"><i class="fa-solid fa-ice-cream"></i> Shirinliklar</h3>
+            <ul class="ledger-list">
+              <li class="ledger-item"><span>Yong'oqli chak-chak</span><span class="dots"></span><strong>26 000 so'm</strong></li>
+              <li class="ledger-item"><span>Sharqona baxlava</span><span class="dots"></span><strong>34 000 so'm</strong></li>
+              <li class="ledger-item"><span>Asalli pahlava</span><span class="dots"></span><strong>30 000 so'm</strong></li>
+              <li class="ledger-item"><span>Qaymoqli patir shirinlik</span><span class="dots"></span><strong>24 000 so'm</strong></li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="price-note">Narxlar so'mda, xizmat haqi kiritilgan</p>
+      </div>
+    </section>
+
+    <section id="offers" class="section offers-section reveal-item">
+      <div class="container">
+        <div class="section-head">
+          <span class="pill-tag">03 / Takliflar</span>
+          <h2 class="section-title">
+            <span>Maxsus</span>
+            <span class="grad-word">Bento</span>
+            <span class="outline-word">Takliflar</span>
+          </h2>
+          <p class="section-desc">Kundalik tushlik, oilaviy kechalar va bayram tadbirlariga mos qulay yechimlar.</p>
+        </div>
+
+        <div class="bento-grid">
+          <article class="bento-card bento-a">
+            <div class="bento-top">
+              <span class="pill-tag"><i class="fa-solid fa-percent"></i> Kundalik taklif</span>
+              <h3>Biznes-lanch</h3>
+            </div>
+            <p>Ish kuni davomida tez va to'yimli tushlik uchun maxsus jamlanma.</p>
+            <div class="chips-row">
+              <span class="chip">12:00 - 15:00</span>
+              <span class="chip">3 xil taom</span>
+              <span class="chip">Choy bepul</span>
+            </div>
+            <div class="bento-price-box">
+              <span class="bento-outline-num">35 000</span>
+              <span class="bento-unit">so'mdan</span>
+            </div>
+          </article>
+
+          <article class="bento-card bento-b">
+            <i class="fa-solid fa-people-group bento-icon"></i>
+            <h3>Oilaviy to'plam</h3>
+            <p>4-6 kishilik dasturxon uchun osh, kabob, salat va choy jamlanmasi.</p>
+          </article>
+
+          <article class="bento-card bento-c">
+            <i class="fa-solid fa-cake-candles bento-icon"></i>
+            <h3>Bayram banketi</h3>
+            <p>Tug'ilgan kun va tantanalar uchun alohida menyu hamda bezatilgan stol.</p>
+          </article>
+
+          <article class="bento-card bento-d">
+            <i class="fa-solid fa-motorcycle bento-icon"></i>
+            <h3>Yetkazib berish</h3>
+            <p>Issiq taomlar maxsus termoqutilarda eshigingizgacha yetkaziladi.</p>
+          </article>
+
+          <article class="bento-card bento-e">
+            <i class="fa-solid fa-child bento-icon"></i>
+            <h3>Bolalar menyusi</h3>
+            <p>Kichik mehmonlar uchun yumshoq, foydali va mazali porsiyalar.</p>
+          </article>
+
+          <article class="bento-card bento-f">
+            <div class="stat-col">
+              <strong>15 yil</strong>
+              <span>tajriba</span>
+            </div>
+            <div class="stat-col">
+              <strong>120+</strong>
+              <span>o'rin</span>
+            </div>
+            <div class="stat-col">
+              <strong>5 000+</strong>
+              <span>mamnun mehmon</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="booking" class="section booking-section reveal-item">
+      <div class="container">
+        <div class="section-head">
+          <span class="pill-tag">04 / Bron</span>
+          <h2 class="section-title">
+            <span>Stol</span>
+            <span class="grad-word">Band</span>
+            <span class="outline-word">Qilish</span>
+          </h2>
+          <p class="section-desc">O'zingizga qulay sana va vaqtni tanlang, joyingizni oldindan tayyorlab qo'yamiz.</p>
+        </div>
+
+        <div class="booking-layout">
+          <form class="booking-form glass-box" onsubmit="showMessage('Stol band qilindi, tasdiqlash uchun qo\'ng\'iroq qilamiz', 'success'); this.reset(); return false;">
+            <div class="form-row">
+              <label for="fullName">To'liq ism</label>
+              <input id="fullName" type="text" required placeholder="Ism familiyangiz" />
+            </div>
+
+            <div class="form-row">
+              <label for="phoneInput">Telefon</label>
+              <input id="phoneInput" type="tel" required placeholder="+998 90 123 45 67" />
+            </div>
+
+            <div class="form-grid-2">
+              <div class="form-row">
+                <label for="dateInput">Sana</label>
+                <input id="dateInput" type="date" required />
+              </div>
+
+              <div class="form-row">
+                <label for="timeInput">Vaqt</label>
+                <input id="timeInput" type="time" required />
+              </div>
+            </div>
+
+            <div class="form-grid-2">
+              <div class="form-row">
+                <label for="guestsSelect">Mehmonlar soni</label>
+                <select id="guestsSelect">
+                  <option value="1-2">1-2</option>
+                  <option value="3-4">3-4</option>
+                  <option value="5-6">5-6</option>
+                  <option value="7-10">7-10</option>
+                  <option value="10+">10+</option>
+                </select>
+              </div>
+
+              <div class="form-row">
+                <label for="hallSelect">Zal turi</label>
+                <select id="hallSelect">
+                  <option value="Umumiy zal">Umumiy zal</option>
+                  <option value="Oilaviy xona">Oilaviy xona</option>
+                  <option value="Terrasa">Terrasa</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <label for="noteInput">Izoh</label>
+              <textarea id="noteInput" rows="3" placeholder="Qo'shimcha tilak yoki eslatmalar"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary submit-btn">Stol band qilish</button>
+          </form>
+
+          <div class="booking-info-card">
+            <h3>Mehmonxona qoidalari</h3>
+            <ul class="info-list">
+              <li>
+                <i class="fa-solid fa-clock"></i>
+                <span>Ish vaqti: har kuni 10:00 - 23:00</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-utensils"></i>
+                <span>Stol 2 soatga band qilinadi</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-phone"></i>
+                <span>Katta guruhlar uchun oldindan telefon orqali kelishish so'raladi</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-child"></i>
+                <span>Bolalar uchun maxsus stulcha bor</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reviews-section reveal-item">
+      <div class="container">
+        <div class="section-head">
+          <span class="pill-tag">05 / Fikrlar</span>
+          <h2 class="section-title">
+            <span>Mehmonlar</span>
+            <span class="grad-word">Samimiy</span>
+            <span class="outline-word">Bahosi</span>
+          </h2>
+          <p class="section-desc">Restoranimiz mehmonlarining taomlar va xizmat haqidagi fikrlari.</p>
+        </div>
+      </div>
+
+      <div class="reviews-marquee">
+        <div class="reviews-track">
+          <article class="review-card">
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p class="review-text">Bayram oshining ziravorlari va guruchining donadorligi juda yoqdi. Oilaviy kechki ovqatimiz a'lo o'tdi.</p>
+            <div class="reviewer">
+              <span class="avatar-wrap"><img class="avatar" src="imgs/odam01.jpg" alt="rasm" loading="lazy" onerror="this.remove()" /></span>
+              <div><strong>Dilshod Karimov</strong><span>Toshkent</span></div>
+            </div>
+          </article>
+
+          <article class="review-card">
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p class="review-text">Qovurma lag'mon issiq va mazali keldi, porsiyasi ham to'yimli. Xizmat ko'rsatish madaniyati yuqori darajada.</p>
+            <div class="reviewer">
+              <span class="avatar-wrap"><img class="avatar" src="imgs/odam02.jpg" alt="rasm" loading="lazy" onerror="this.remove()" /></span>
+              <div><strong>Madina Rustamova</strong><span>Samarqand</span></div>
+            </div>
+          </article>
+
+          <article class="review-card">
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p class="review-text">Zanjabilli ko'k choy va sharqona baxlava ajoyib juftlik ekan. Kechki sayrdan keyin eng yoqimli manzil.</p>
+            <div class="reviewer">
+              <span class="avatar-wrap"><img class="avatar" src="imgs/odam03.jpg" alt="rasm" loading="lazy" onerror="this.remove()" /></span>
+              <div><strong>Jasurbek Tursunov</strong><span>Andijon</span></div>
+            </div>
+          </article>
+
+          <article class="review-card">
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p class="review-text">Stolni oldindan band qilganimizda barcha sharoit tayyor edi. Muhiti tinch va dasturxoni barakali.</p>
+            <div class="reviewer">
+              <span class="avatar-wrap"><img class="avatar" src="imgs/odam04.jpg" alt="rasm" loading="lazy" onerror="this.remove()" /></span>
+              <div><strong>Nilufar Abdullayeva</strong><span>Buxoro</span></div>
+            </div>
+          </article>
+
+          <article class="review-card">
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p class="review-text">Bayram oshining ziravorlari va guruchining donadorligi juda yoqdi. Oilaviy kechki ovqatimiz a'lo o'tdi.</p>
+            <div class="reviewer">
+              <span class="avatar-wrap"><img class="avatar" src="imgs/odam01.jpg" alt="rasm" loading="lazy" onerror="this.remove()" /></span>
+              <div><strong>Dilshod Karimov</strong><span>Toshkent</span></div>
+            </div>
+          </article>
+
+          <article class="review-card">
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p class="review-text">Qovurma lag'mon issiq va mazali keldi, porsiyasi ham to'yimli. Xizmat ko'rsatish madaniyati yuqori darajada.</p>
+            <div class="reviewer">
+              <span class="avatar-wrap"><img class="avatar" src="imgs/odam02.jpg" alt="rasm" loading="lazy" onerror="this.remove()" /></span>
+              <div><strong>Madina Rustamova</strong><span>Samarqand</span></div>
+            </div>
+          </article>
+
+          <article class="review-card">
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p class="review-text">Zanjabilli ko'k choy va sharqona baxlava ajoyib juftlik ekan. Kechki sayrdan keyin eng yoqimli manzil.</p>
+            <div class="reviewer">
+              <span class="avatar-wrap"><img class="avatar" src="imgs/odam03.jpg" alt="rasm" loading="lazy" onerror="this.remove()" /></span>
+              <div><strong>Jasurbek Tursunov</strong><span>Andijon</span></div>
+            </div>
+          </article>
+
+          <article class="review-card">
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p class="review-text">Stolni oldindan band qilganimizda barcha sharoit tayyor edi. Muhiti tinch va dasturxoni barakali.</p>
+            <div class="reviewer">
+              <span class="avatar-wrap"><img class="avatar" src="imgs/odam04.jpg" alt="rasm" loading="lazy" onerror="this.remove()" /></span>
+              <div><strong>Nilufar Abdullayeva</strong><span>Buxoro</span></div>
+            </div>
+          </article>
+
+          <article class="review-card">
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p class="review-text">Bayram oshining ziravorlari va guruchining donadorligi juda yoqdi. Oilaviy kechki ovqatimiz a'lo o'tdi.</p>
+            <div class="reviewer">
+              <span class="avatar-wrap"><img class="avatar" src="imgs/odam01.jpg" alt="rasm" loading="lazy" onerror="this.remove()" /></span>
+              <div><strong>Dilshod Karimov</strong><span>Toshkent</span></div>
+            </div>
+          </article>
+
+          <article class="review-card">
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p class="review-text">Qovurma lag'mon issiq va mazali keldi, porsiyasi ham to'yimli. Xizmat ko'rsatish madaniyati yuqori darajada.</p>
+            <div class="reviewer">
+              <span class="avatar-wrap"><img class="avatar" src="imgs/odam02.jpg" alt="rasm" loading="lazy" onerror="this.remove()" /></span>
+              <div><strong>Madina Rustamova</strong><span>Samarqand</span></div>
+            </div>
+          </article>
+
+          <article class="review-card">
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p class="review-text">Zanjabilli ko'k choy va sharqona baxlava ajoyib juftlik ekan. Kechki sayrdan keyin eng yoqimli manzil.</p>
+            <div class="reviewer">
+              <span class="avatar-wrap"><img class="avatar" src="imgs/odam03.jpg" alt="rasm" loading="lazy" onerror="this.remove()" /></span>
+              <div><strong>Jasurbek Tursunov</strong><span>Andijon</span></div>
+            </div>
+          </article>
+
+          <article class="review-card">
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p class="review-text">Stolni oldindan band qilganimizda barcha sharoit tayyor edi. Muhiti tinch va dasturxoni barakali.</p>
+            <div class="reviewer">
+              <span class="avatar-wrap"><img class="avatar" src="imgs/odam04.jpg" alt="rasm" loading="lazy" onerror="this.remove()" /></span>
+              <div><strong>Nilufar Abdullayeva</strong><span>Buxoro</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact-section reveal-item">
+      <div class="container">
+        <div class="section-head">
+          <span class="pill-tag">06 / Aloqa</span>
+          <h2 class="section-title">
+            <span>Biz</span>
+            <span class="grad-word">Bilan</span>
+            <span class="outline-word">Bog'laning</span>
+          </h2>
+          <p class="section-desc">Manzilimiz, aloqa raqamlarimiz va ko'p beriladigan savollarga javoblar.</p>
+        </div>
+
+        <div class="contact-layout">
+          <div class="contact-card glass-box">
+            <div class="contact-row">
+              <i class="fa-solid fa-phone"></i>
+              <div>
+                <strong>Telefon</strong>
+                <span>+998 71 245 88 90</span>
+              </div>
+            </div>
+
+            <div class="contact-row">
+              <i class="fa-solid fa-envelope"></i>
+              <div>
+                <strong>Elektron pochta</strong>
+                <span>aloqa@ziraolov.uz</span>
+              </div>
+            </div>
+
+            <div class="contact-row">
+              <i class="fa-solid fa-location-dot"></i>
+              <div>
+                <strong>Manzil</strong>
+                <span>Toshkent shahri, Amir Temur shoh ko'chasi 42-uy, markaziy bog' yaqinida</span>
+              </div>
+            </div>
+
+            <div class="contact-row">
+              <i class="fa-solid fa-clock"></i>
+              <div>
+                <strong>Ish vaqti</strong>
+                <span>Har kuni 10:00 - 23:00</span>
+              </div>
+            </div>
+
+            <a href="https://www.google.com/maps/search/?api=1&query=Toshkent%20shahri%2C%20Amir%20Temur%20shoh%20ko%27chasi%2042-uy" target="_blank" rel="noopener" class="btn btn-primary map-btn">
+              <i class="fa-solid fa-map-location-dot"></i>
+              <span>Xaritada ochish</span>
+            </a>
+
+            <div class="social-links">
+              <a href="https://t.me" target="_blank" rel="noopener" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+              <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+              <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+          </div>
+
+          <div class="faq-list">
+            <details name="faq" class="faq-item glass-box">
+              <summary>
+                <span>Restoran qaysi kunlari va soatlarda ishlaydi?</span>
+                <i class="fa-solid fa-chevron-down"></i>
+              </summary>
+              <p>Restoranimiz dam olish kunlarisiz har kuni soat 10:00 dan 23:00 gacha mehmonlarni qabul qiladi.</p>
+            </details>
+
+            <details name="faq" class="faq-item glass-box">
+              <summary>
+                <span>Stolni qanday tartibda oldindan band qilish mumkin?</span>
+                <i class="fa-solid fa-chevron-down"></i>
+              </summary>
+              <p>Stol band qilish bo'limidagi formani to'ldirib yuboring, menejerimiz vaqtni tasdiqlash uchun bog'lanadi.</p>
+            </details>
+
+            <details name="faq" class="faq-item glass-box">
+              <summary>
+                <span>Taomlarni yetkazib berish qancha vaqt oladi?</span>
+                <i class="fa-solid fa-chevron-down"></i>
+              </summary>
+              <p>Shahar ichida buyurtmalar o'rtacha 35-55 daqiqa davomida issiq holatda yetkazib beriladi.</p>
+            </details>
+
+            <details name="faq" class="faq-item glass-box">
+              <summary>
+                <span>Bayram banketi va katta davralar uchun joy bormi?</span>
+                <i class="fa-solid fa-chevron-down"></i>
+              </summary>
+              <p>Ha, oilaviy xonalar va umumiy zalda 10 dan ortiq mehmon uchun alohida dasturxon tuzish mumkin.</p>
+            </details>
+
+            <details name="faq" class="faq-item glass-box">
+              <summary>
+                <span>Buyurtma va stol xizmati uchun qanday hisob-kitob qilinadi?</span>
+                <i class="fa-solid fa-chevron-down"></i>
+              </summary>
+              <p>Buyurtma qabul qilingach operator bilan bog'lanib, naqd yoki kuryer/restoranda qulay usulda hisob-kitob qilasiz.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <aside id="cart" class="cart-drawer" aria-label="Buyurtmangiz">
+    <div class="cart-head">
+      <h3>Buyurtmangiz</h3>
+      <button type="button" class="close-btn" onclick="toggleMenu('cart')" aria-label="Yopish">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <div class="cart-body">
+      <div class="cart-total-box">
+        <span>Jami:</span>
+        <strong id="cartTotal">0 so'm</strong>
+      </div>
+      <p class="cart-note">Buyurtma berilgach operator siz bilan bog'lanadi</p>
+      <button type="button" class="btn btn-primary cart-submit" onclick="orderNow()">Buyurtma berish</button>
+    </div>
+  </aside>
+  <div id="overlay" class="drawer-overlay" onclick="toggleMenu('cart')"></div>
+
+  <div id="notes" class="notes-wrap" aria-live="polite"></div>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <a href="#" class="brand footer-brand">
+          <i class="fa-solid fa-utensils"></i>
+          <span>Zira Olov</span>
+        </a>
+        <p class="footer-about">Zira Olov — milliy oshxona an'analari, aniq narxlar va samimiy xizmat maskani.</p>
+        <div class="social-links">
+          <a href="https://t.me" target="_blank" rel="noopener" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+          <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+          <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigatsiya</h4>
+        <ul class="footer-links">
+          <li><a href="#menu">Menyu</a></li>
+          <li><a href="#prices">Narxlar</a></li>
+          <li><a href="#offers">Takliflar</a></li>
+          <li><a href="#booking">Stol band qilish</a></li>
+          <li><a href="#contact">Aloqa</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Yordam</h4>
+        <ul class="footer-links">
+          <li><a href="#offers">Biznes-lanch</a></li>
+          <li><a href="#booking">Stol bron qilish</a></li>
+          <li><a href="#contact">Savol-javoblar</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Aloqa</h4>
+        <ul class="footer-links">
+          <li><span><i class="fa-solid fa-phone"></i> +998 71 245 88 90</span></li>
+          <li><span><i class="fa-solid fa-location-dot"></i> Toshkent, Amir Temur shoh ko'chasi 42-uy</span></li>
+          <li><span><i class="fa-solid fa-clock"></i> Har kuni 10:00 - 23:00</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>Zira Olov. Barcha huquqlar himoyalangan.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
